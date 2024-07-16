@@ -1,0 +1,575 @@
+ifndef::snippets[]
+:snippets: ./build/generated-snippets
+endif::[]
+
+= SAFETY REST Docs
+API 문서
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+
+== 상수
+
+include::{snippets}/system/enumeration/message_type/enum-response-fields-enumeration.adoc[]
+
+include::{snippets}/system/enumeration/notification_type/enum-response-fields-enumeration.adoc[]
+
+include::{snippets}/system/enumeration/platform/enum-response-fields-enumeration.adoc[]
+
+___
+
+== 관리자 API
+
+=== [관리자 로그인 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/admin/login/http-request.adoc[]
+
+include::{snippets}/admin/login/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/admin/login/http-response.adoc[]
+
+include::{snippets}/admin/login/response-fields.adoc[]
+
+___
+
+== 회원 API
+
+=== [로그인 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/login/http-request.adoc[]
+
+include::{snippets}/user/login/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/login/http-response.adoc[]
+
+include::{snippets}/user/login/response-fields.adoc[]
+
+___
+
+=== [WEB SNS Login API]
+==== [HTTP 요청 정보]
+
+----
+GET /api/oauth2/authorization/{platform} HTTP/1.1
+----
+
+[cols="1,1"]
+|===
+|파라미터 |설명 |필수
+
+|`platform` |SNS로그인할 플랫폼 [naver, kakao(Kakao는 비즈앱 인증이 필요)] |true 
+|===
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/login/http-response.adoc[]
+
+include::{snippets}/user/login/response-fields.adoc[]
+
+___
+
+=== [APP SNS Login API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/app/sns-login/http-request.adoc[]
+
+include::{snippets}/user/app/sns-login/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/app/sns-login/http-response.adoc[]
+
+include::{snippets}/user/app/sns-login/response-fields.adoc[]
+
+___
+
+=== [회원가입 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/register/http-request.adoc[]
+
+include::{snippets}/user/register/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/register/http-response.adoc[]
+
+include::{snippets}/user/register/response-body.adoc[]
+
+___
+
+=== [프로필수정 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/update/http-request.adoc[]
+
+include::{snippets}/user/update/request-headers.adoc[]
+
+include::{snippets}/user/update/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/update/http-response.adoc[]
+
+include::{snippets}/user/update/response-body.adoc[]
+
+___
+
+=== [회원탈퇴 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/delete/http-request.adoc[]
+
+include::{snippets}/user/delete/request-headers.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/delete/http-response.adoc[]
+
+include::{snippets}/user/delete/response-body.adoc[]
+
+___
+
+=== [Access 토큰 재발급 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/refresh_token/http-request.adoc[]
+
+include::{snippets}/user/refresh_token/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/refresh_token/http-response.adoc[]
+
+include::{snippets}/user/refresh_token/response-fields.adoc[]
+
+___
+
+=== [인증문자 번호 확인 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/message/cert/http-request.adoc[]
+
+include::{snippets}/user/message/cert/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/message/cert/http-response.adoc[]
+
+include::{snippets}/user/message/cert/response-body.adoc[]
+
+___
+
+=== [프로필조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/profile/http-request.adoc[]
+
+include::{snippets}/user/profile/request-headers.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/profile/http-response.adoc[]
+
+include::{snippets}/user/profile/response-fields.adoc[]
+
+___
+
+=== [알림동의 요청 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/notification/agree/http-request.adoc[]
+
+include::{snippets}/user/notification/agree/request-headers.adoc[]
+
+include::{snippets}/user/notification/agree/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/notification/agree/http-response.adoc[]
+
+include::{snippets}/user/notification/agree/response-body.adoc[]
+
+___
+
+=== [닉네임 중복 검사 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/nickname/valid/http-request.adoc[]
+
+include::{snippets}/user/nickname/valid/query-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/nickname/valid/http-response.adoc[]
+
+include::{snippets}/user/nickname/valid/response-fields.adoc[]
+
+___
+
+=== [로그아웃 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/user/logout/http-request.adoc[]
+
+include::{snippets}/user/logout/request-headers.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/user/logout/http-response.adoc[]
+
+include::{snippets}/user/logout/response-body.adoc[]
+
+___
+
+
+== 마이페이지 API
+
+=== [저장된 게시물 조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/mypage/save_board/http-request.adoc[]
+
+include::{snippets}/mypage/save_board/request-headers.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/mypage/save_board/http-response.adoc[]
+
+include::{snippets}/mypage/save_board/response-fields.adoc[]
+
+___
+
+
+== 법률 API
+
+=== [법률 조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/search/http-request.adoc[]
+
+include::{snippets}/law/search/request-headers.adoc[]
+
+include::{snippets}/law/search/query-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/search/http-response.adoc[]
+
+include::{snippets}/law/search/response-fields.adoc[]
+
+___
+
+=== [키워드검색 시 카테고리별 데이터 수량 조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/search/count/http-request.adoc[]
+
+include::{snippets}/law/search/count/request-headers.adoc[]
+
+include::{snippets}/law/search/count/query-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/search/count/http-response.adoc[]
+
+include::{snippets}/law/search/count/response-fields.adoc[]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/search/http-request.adoc[]
+
+include::{snippets}/law/search/request-headers.adoc[]
+
+include::{snippets}/law/search/query-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/search/http-response.adoc[]
+
+include::{snippets}/law/search/response-fields.adoc[]
+
+___
+
+=== [법률 상세조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/detail/http-request.adoc[]
+
+include::{snippets}/law/detail/request-headers.adoc[]
+
+include::{snippets}/law/detail/path-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/detail/http-response.adoc[]
+
+include::{snippets}/law/detail/response-fields.adoc[]
+
+___
+
+=== [카테고리 조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/category/http-request.adoc[]
+
+include::{snippets}/law/category/request-headers.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/category/http-response.adoc[]
+
+include::{snippets}/law/category/response-fields.adoc[]
+
+___
+
+=== [법률 댓글작성 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/comment/create/http-request.adoc[]
+
+include::{snippets}/law/comment/create/request-headers.adoc[]
+
+include::{snippets}/law/comment/create/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/comment/create/http-response.adoc[]
+
+include::{snippets}/law/comment/create/response-body.adoc[]
+
+___
+
+=== [최근 열람한 법률 조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/history/http-request.adoc[]
+
+include::{snippets}/law/history/request-headers.adoc[]
+
+include::{snippets}/law/history/query-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/history/http-response.adoc[]
+
+include::{snippets}/law/history/response-fields.adoc[]
+
+___
+
+=== [검색키워드 랭킹조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/ranking/keyword/http-request.adoc[]
+
+include::{snippets}/law/ranking/keyword/request-headers.adoc[]
+
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/ranking/keyword/http-response.adoc[]
+
+include::{snippets}/law/ranking/keyword/response-fields.adoc[]
+
+___
+
+=== [향상된 법률 조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/enhance/search/http-request.adoc[]
+
+include::{snippets}/law/enhance/search/request-headers.adoc[]
+
+include::{snippets}/law/enhance/search/request-fields.adoc[]
+
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/enhance/search/http-response.adoc[]
+
+include::{snippets}/law/enhance/search/response-fields.adoc[]
+
+___
+
+=== [바뀐 법률데이터 조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/law/change_list/http-request.adoc[]
+
+include::{snippets}/law/change_list/request-headers.adoc[]
+
+include::{snippets}/law/change_list/query-parameters.adoc[]
+
+
+==== [HTTP 응답 정보]
+include::{snippets}/law/change_list/http-response.adoc[]
+
+include::{snippets}/law/change_list/response-fields.adoc[]
+
+___
+
+== 공통 API
+
+=== [인증문자 발송 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/common/message/send/http-request.adoc[]
+
+include::{snippets}/common/message/send/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/common/message/send/http-response.adoc[]
+
+include::{snippets}/common/message/send/response-body.adoc[]
+
+___
+
+
+== 게시물 API
+
+=== [게시물 추가 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/create/http-request.adoc[]
+
+include::{snippets}/board/create/request-headers.adoc[]
+
+include::{snippets}/board/create/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/create/http-response.adoc[]
+
+include::{snippets}/board/create/response-body.adoc[]
+
+___
+
+=== [게시물 조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/list/http-request.adoc[]
+
+include::{snippets}/board/list/request-headers.adoc[]
+
+include::{snippets}/board/list/query-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/list/http-response.adoc[]
+
+include::{snippets}/board/list/response-fields.adoc[]
+
+___
+
+=== [게시물 단건조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/detail/http-request.adoc[]
+
+include::{snippets}/board/detail/request-headers.adoc[]
+
+include::{snippets}/board/detail/path-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/detail/http-response.adoc[]
+
+include::{snippets}/board/detail/response-fields.adoc[]
+
+___
+
+=== [게시물 수정 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/update/http-request.adoc[]
+
+include::{snippets}/board/update/request-headers.adoc[]
+
+include::{snippets}/board/update/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/update/http-response.adoc[]
+
+include::{snippets}/board/update/response-body.adoc[]
+
+___
+
+=== [게시물 삭제 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/delete/http-request.adoc[]
+
+include::{snippets}/board/delete/request-headers.adoc[]
+
+include::{snippets}/board/delete/path-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/delete/http-response.adoc[]
+
+include::{snippets}/board/delete/response-body.adoc[]
+
+___
+
+=== [게시물 저장 및 삭제 API]
+
+==== - 게시물 저장 이후 한번더 같은 요청을 하면 저장데이터 삭제처리가 됩니다.
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/save_delete/http-request.adoc[]
+
+include::{snippets}/board/save_delete/request-headers.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/save_delete/http-response.adoc[]
+
+include::{snippets}/board/save_delete/response-body.adoc[]
+
+___
+
+=== [댓글 추가 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/comment/create/http-request.adoc[]
+
+include::{snippets}/board/comment/create/request-headers.adoc[]
+
+include::{snippets}/board/comment/create/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/comment/create/http-response.adoc[]
+
+include::{snippets}/board/comment/create/response-body.adoc[]
+
+___
+
+=== [댓글 조회 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/comment/search/http-request.adoc[]
+
+include::{snippets}/board/comment/search/request-headers.adoc[]
+
+include::{snippets}/board/comment/search/path-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/comment/search/http-response.adoc[]
+
+include::{snippets}/board/comment/search/response-fields.adoc[]
+
+___
+
+=== [댓글 수정 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/comment/update/http-request.adoc[]
+
+include::{snippets}/board/comment/update/request-headers.adoc[]
+
+include::{snippets}/board/comment/update/request-fields.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/comment/update/http-response.adoc[]
+
+include::{snippets}/board/comment/update/response-body.adoc[]
+
+___
+
+=== [댓글 삭제 API]
+
+==== [HTTP 요청 정보]
+include::{snippets}/board/comment/delete/http-request.adoc[]
+
+include::{snippets}/board/comment/delete/request-headers.adoc[]
+
+include::{snippets}/board/comment/delete/path-parameters.adoc[]
+
+==== [HTTP 응답 정보]
+include::{snippets}/board/comment/delete/http-response.adoc[]
+
+include::{snippets}/board/comment/delete/response-body.adoc[]
+
+___
+
+
