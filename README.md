@@ -11,12 +11,8 @@
 
 
 ## **API DOCS 문서**
-- 문서를 확인해주세요.
-<br/>
-<details>
-  <summary>Click to expand API documentation</summary>
-  
-  <iframe src="pub/api_docs.html" width="100%" height="600px"></iframe>
+- [문서](https://modusafe.site/api/docs/index.html)를 작성하여 프론트엔드와 쉽게 협업할 수 있도록 만들었습니다
+- SpringRestDocs를 이용하여 테스트를 통과한 API만 문서화가 되도록 했습니다.
 
 </details>
 
