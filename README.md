@@ -13,11 +13,15 @@
 ## **API DOCS 문서**
 - 문서를 확인해주세요.
 <br/>
-[API 문서 보기](pub/api_docs.html)
+<details>
+  <summary>Click to expand API documentation</summary>
+  
+  <iframe src="pub/api_docs.html" width="100%" height="600px"></iframe>
+
+</details>
 
 ## **아키텍처**
 - /api 의 루트컨텍스트를 가진 요청은 API서버로 요청되게 했습니다.
-- 일반요청은 VERCEL로 라우팅처리 했으며, /download 요청은 저장했던 파일데이터에 접근 하도록 처리했습니다.
 - 안드로이드 Termux를 이용해 구축했습니다.
 - 아래와 같이 구성했습니다.
 ![](pub/Safety아키텍처.png)
